@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: service-b
-          image: sachin640/testapp2:0.0.1
+          image: sachin640/testapp2:latest
           ports:
             - containerPort: 8080
