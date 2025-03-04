@@ -1,0 +1,18 @@
+apiversion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: service-b-app
+  namespace: argocd
+spec:
+  destination:
+    namespace: service-b-namespace
+    server: https://kubernetes.default.svc
+  source:
+    repourl: https://github.com/sachinm640/service-b.git
+    targetRevision: main
+    path: service-b
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
